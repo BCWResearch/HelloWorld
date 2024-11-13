@@ -162,8 +162,13 @@ Password: adminPassword
 Note that these are just defaults and can be changed within the `deploy_gke.sh` script or `variables.tf` file of the Terraform configuration.
 
 ## Dashboard
-To view the Grafana dashboard, head to this link `https://grafana.randomdnsnamerighthere.com/dashboards` or simply
-use the left-hand sidebar in the Grafana endpoint to view the Kubernetes Overview.
+To view the Grafana dashboard, head to one of these links:
+- `https://grafana.randomdnsnamerighthere.com/d/b4631126-0295-493a-bbb1-7297f01ee01a/dashboard?orgId=1`
 
-It will show general cluster metrics as well as some visualizations for the HelloWeb3 service.
+
+- `https://grafana.randomdnsnamerighthere.com/dashboards` then use the left-hand sidebar in the Grafana endpoint to view the Kubernetes Overview.
+
+
+
+It will show general cluster metrics as well as some visualizations for the HelloWeb3 service (Bortip)
 
