@@ -63,6 +63,9 @@ process and push the resultant image into Artifact Registry where it can be used
 proceeding Helm deployment.
 
 ### Helm Deployment - HelloWeb3
+
+#### Or alternatively, just use Github Actions to deploy with Helm!
+
 If you have successfully pushed the image and created the cluster, then the next step is to configure
 your Kubectl CLI tool via Kubeconfig.
 
