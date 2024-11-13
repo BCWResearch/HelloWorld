@@ -169,6 +169,5 @@ To view the Grafana dashboard, head to one of these links:
 - `https://grafana.randomdnsnamerighthere.com/dashboards` then use the left-hand sidebar in the Grafana endpoint to view the Kubernetes Overview.
 
 
-
 It will show general cluster metrics as well as some visualizations for the HelloWeb3 service (Bortip)
 
