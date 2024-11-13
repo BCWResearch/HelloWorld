@@ -16,7 +16,7 @@ fullnameOverride: "helloweb3"
 
 secret:
   secretKeyRefName: polygon-api-key
-  secretKeyVariableName: "POLYGON_API_KEY"
+  secretKeyVariableName: API_KEY
 
 serviceAccount:
   # Specifies whether a service account should be created

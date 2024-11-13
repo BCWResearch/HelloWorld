@@ -97,8 +97,6 @@ Now that you have deployed the GKE cluster and the Helm deployment, you must set
 in Google Cloud in order to make the Ingress resources functional and expose the services to the
 external internet.
 
-If more time were allowed, fully automatic processes to deal with this could be set up.
-
 For now, we will go the the Hosted Zones section of Google cloud.
 
 Run the following commands:
@@ -125,6 +123,19 @@ traffic.
 ### Prometheus and Grafana
 Deploying these resources have been handled in the Terraform step.
 
+However, in the event that the Prometheus server does not automatically retrieve the metrics from the Docker image/service you just deployed, 
+you may use the `prometheus_configmap.yml` in the root directory of this repository to enable this behaviour. 
+
+Essentially, you will to replace the inline configmap yaml that is being defined within the `kube-prometheus-stackr-server` configmap resource
+under the `prometheus.yml |` section header.
+
+You can copy and paste the entirety of the `scrape_configs` header or just the parts that specifically target the HelloWeb3 application.
+
+Use this command to do so:
+`kubectl edit configmap kube-prometheus-servr-stackr -n monitoring` and it will bring you into an editable VIM window in your command line 
+terminal. Use `i` once in this screen to edit.
+
+Simply copy paste the `scrape_configs` sections between the two yamls, and you should be good to go. Exit with `:wq`.
 ## Accessing resources
 In order to access the URL for the services, use the same command as in the Ingress step:
 ```
@@ -153,4 +164,3 @@ use the left-hand sidebar in the Grafana endpoint to view the Kubernetes Overvie
 
 It will show general cluster metrics as well as some visualizations for the HelloWeb3 service.
 
-If more time were allowed, custom scraper configs for the Prometheus service could be configured.

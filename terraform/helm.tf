@@ -19,7 +19,7 @@ resource "kubernetes_secret" "polygon_api_key" {
   }
 
   data = {
-    POLYGON_API_KEY     = var.polygon_api_key
+    API_KEY     = var.polygon_api_key
   }
 
   type = "Opaque"

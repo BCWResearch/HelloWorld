@@ -358,5 +358,5 @@ metadata:
     helm.sh/chart: prometheus-25.24.1
   name: kube-prometheus-stackr-server
   namespace: monitoring
-  resourceVersion: "11749890"
+  resourceVersion: "12246201"
   uid: 757efcea-cb78-44dc-8975-e89de4bde279
