@@ -37,21 +37,11 @@ jobs:
         with:
           credentials_json: "${{ env.SERVICE_ACCOUNT_KEY }}"
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v2'
+      - id: 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v2'
         with:
-          version: '>= 363.0.0'
-
-      - name: "Use gcloud CLI"
-        run: "gcloud info"
-
-      - name: "Set FULL_IMAGE_NAME"
-        run: echo "FULL_IMAGE_NAME=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPO_NAME }}/${{ env.DOCKER_IMAGE_NAME }}" >> $GITHUB_ENV
-
-      - name: Kubectl + Kubeconfig
-        uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          cluster_name: 'gke-cluster-1'
+          location: 'us-central1'
 
       - name: Install Helm
         run: |
